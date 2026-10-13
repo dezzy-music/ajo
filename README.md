@@ -99,7 +99,7 @@ contract id).
 
 The app runs on `:3000`. Install [Freighter](https://www.freighter.app/),
 switch it to Stellar testnet, and fund a testnet account via
-[the Laboratory](https://laboratory.stellar.org/#account-creator?network=test)
+[the Stellar Lab](https://lab.stellar.org/account/fund?$=network$id=testnet)
 before creating or joining a circle.
 
 ## The contract
@@ -116,7 +116,7 @@ before creating or joining a circle.
 | `disburse` | Pays out the current cycle's recipient once everyone's paid, or the deadline passes. Callable by anyone — no privileged keeper. |
 | `get_circle` / `has_contributed` / `missed_count` / `total_circles` | Read-only state, including a per-member missed-contribution strike count. |
 
-21 unit tests cover the full rotation (every member paid exactly once,
+Unit tests cover the full rotation (every member paid exactly once,
 circle completion, including a 10-member circle), the missed-deadline path
 (partial payout, strikes accumulating across repeated misses), leave/cancel,
 and every rejected-input case. See `contracts/ajo-circle/src/test.rs`.
